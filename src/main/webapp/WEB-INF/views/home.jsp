@@ -1,16 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 1
-  Date: 26.07.2017
-  Time: 10:46
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Home</title>
+    <link rel="stylesheet" href="<spring:url value="/resources/css/home.css"/>" type="text/css">
 </head>
 <body>
-<h2>Hello!</h2>
+<h1>Hello!</h1>
 </body>
 </html>
