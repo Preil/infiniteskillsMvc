@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
@@ -13,9 +12,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <jsp:include page="../views/fragments/header.jsp"/>
-    <div class="container">
+<jsp:include page="../views/fragments/header.jsp"/>
+<div class="container">
+    <h2>Current project</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><label>Project Name:</label>
+            <span>${currentProject.name}</span></li>
+        <li class="list-group-item"><label>Project Sponsor:</label>
+            <span>${currentProject.sponsor}</span></li>
+        <li class="list-group-item"><label>Description:</label><br>
+            <span>${currentProject.description}</span></li>
 
-    </div>
+    </ul>
+</div>
 </body>
 </html>
