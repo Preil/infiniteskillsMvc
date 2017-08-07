@@ -40,18 +40,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="funds">Authorized Funds</label>
-                    <input type="text" id="funds" class="form-control" name="authorized_funds"/>
+                    <label for="year">Year</label>
+                    <input type="text" id="year" class="form-control" name="year"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="hours">Authorized Hours</label>
-                    <input type="text" id="hours" class="form-control" name="authorized_hours"/>
+                    <label for="authorizedFunds">Authorized Funds</label>
+                    <input type="text" id="authorizedFunds" class="form-control" name="authorizedFunds"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorizedHours">Authorized Hours</label>
+                    <input type="text" id="authorizedHours" class="form-control" name="authorizedHours"/>
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" id="description" rows="3"></textarea>
+                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-default">Submit</button>
