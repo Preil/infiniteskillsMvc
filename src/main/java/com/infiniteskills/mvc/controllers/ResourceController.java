@@ -6,6 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Ilya 09.08.2017.
  */
@@ -16,6 +20,8 @@ public class ResourceController {
 
     @RequestMapping(value = "/add")
     private String add(Model model){
+        List<String> options = new LinkedList<>(Arrays.asList("Material", "Other", "Staff", "Technical Equipment"));
+        model.addAttribute("typeOptions", options);
         model.addAttribute("resource", new Resource());
         System.out.println("Add resource invoked");
         return "resource_add";
