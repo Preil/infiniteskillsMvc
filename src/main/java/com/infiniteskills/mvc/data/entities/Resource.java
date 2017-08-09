@@ -52,4 +52,15 @@ public class Resource {
     public void setUnitOfMeasure(String unitOfMeasure) {
         this.unitOfMeasure = unitOfMeasure;
     }
+
+    @Override
+    public String toString() {
+        return "Resource{" +
+                "resourceId=" + resourceId +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", cost=" + cost +
+                ", unitOfMeasure='" + unitOfMeasure + '\'' +
+                '}';
+    }
 }

@@ -3,6 +3,7 @@ package com.infiniteskills.mvc.controllers;
 import com.infiniteskills.mvc.data.entities.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -21,8 +22,8 @@ public class ResourceController {
     }
 
     @RequestMapping(value = "/save")
-    private String save(){
-        System.out.println("Invoking method save");
+    private String save(@ModelAttribute Resource resource){
+        System.out.println(resource);
         return "resource_add";
     }
 
