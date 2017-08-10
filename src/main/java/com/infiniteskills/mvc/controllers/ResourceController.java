@@ -34,7 +34,7 @@ public class ResourceController {
     @RequestMapping(value = "/save")
     private String save(@ModelAttribute Resource resource){
         System.out.println(resource);
-        return "resource_add";
+        return "home";
     }
 
 
