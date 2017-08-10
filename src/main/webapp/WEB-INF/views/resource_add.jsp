@@ -45,7 +45,7 @@
 
         <div class="form-group">
             <label for="cost">Cost</label>
-            <form:input path="cost" cssClass="form-control"/>
+            <form:input path="cost" cssClass="form-control" id="cost"/>
         </div>
 
         <div class="form-group">
@@ -57,6 +57,13 @@
             <label for="indicators">Indicators</label>
             <form:checkboxes id="indicators" element="span class='checkbox'" path="indicators" items="${checkOptions}"/>
         </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <form:textarea id="notes" path="notes" rows="3" cssClass="form-control"/>
+        </div>
+
+
 
         <button type="submit" class="btn btn-default">Submit</button>
 
