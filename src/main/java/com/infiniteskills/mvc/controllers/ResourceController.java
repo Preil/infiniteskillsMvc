@@ -22,6 +22,10 @@ public class ResourceController {
     private String add(Model model){
         List<String> options = new LinkedList<>(Arrays.asList("Material", "Other", "Staff", "Technical Equipment"));
         model.addAttribute("typeOptions", options);
+        List<String> radios = new LinkedList<>(Arrays.asList("Hours", "Pieces", "Tons"));
+        model.addAttribute("radioOptions", radios);
+        List<String> checks = new LinkedList<>(Arrays.asList("Lead Time", "Special rate", "Requires approval"));
+        model.addAttribute("checkOptions", checks);
         model.addAttribute("resource", new Resource());
         System.out.println("Add resource invoked");
         return "resource_add";
