@@ -1,6 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,8 @@
     <jsp:include page="../views/fragments/header.jsp"/>
     <div class="container">
         <div class="row">
-            <form action="<spring:url value="/project/add"/>" method="post" class="col-md-8 col-md-offset-2">
+                <spring:url value="/project/add" var="formUrl"/>
+                <form:form modelAttribute="project" action="${formUrl }" method="post" cssClass="col-md-8 col-md-offset-2">
 
                 <div class="form-group">
                     <label for="project-name">Name</label>
@@ -26,12 +28,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="project_type">Type</label>
-                    <select class="selectpicker" name="type" id="project_type" >
-                        <option></option>
-                        <option value="single">Single year</option>
-                        <option value="multi">Multi year</option>
-                    </select>
+                    <label for="type">Type</label>
+                    <form:select path="type" items="${types}" cssClass="selectpicker" id = "type"/>
                 </div>
 
                 <div class="form-group">
@@ -66,7 +64,7 @@
 
                 <button type="submit" class="btn btn-default">Submit</button>
 
-            </form>
+            </form:form>
         </div>
     </div>
 </body>

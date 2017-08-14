@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.ArrayList;
+
 /**
  * Ilya 02.08.2017.
  */
@@ -22,21 +24,28 @@ public class ProjectController {
     private ProjectService projectService;
 
     @RequestMapping(value = "/{projectId}")
-    public String findProject(Model model, @PathVariable("projectId") Long projectId){
+    public String findProject(Model model, @PathVariable("projectId") Long projectId) {
         model.addAttribute("project", projectService.find(projectId));
         return "project";
     }
 
     @RequestMapping(value = "/find")
-    public String find(Model model){
+    public String find(Model model) {
         model.addAttribute("projects", projectService.findAll());
         return "projects";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String addProject() {
-
+    public String addProject(Model model) {
+        model.addAttribute("types", new ArrayList<String>() {
+            {
+                add("");
+                add("Single year");
+                add("Multi year");
+            }
+        });
         System.out.println("invoking addProject");
+        model.addAttribute("project", new Project());
         return "project_add";
     }
 
@@ -46,7 +55,6 @@ public class ProjectController {
         model.addAttribute("currentProject", project);
         return "project";
     }
-
 
 
 }
