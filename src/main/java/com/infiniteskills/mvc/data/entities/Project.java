@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Project {
     private Long projectId;
     private String name;
-    private String sponsor;
+    private Sponsor sponsor;
     private String description;
     private BigDecimal authorizedHours;
     private BigDecimal authorizedFunds;
@@ -32,11 +32,11 @@ public class Project {
         this.name = name;
     }
 
-    public String getSponsor() {
+    public Sponsor getSponsor() {
         return sponsor;
     }
 
-    public void setSponsor(String sponsor) {
+    public void setSponsor(Sponsor sponsor) {
         this.sponsor = sponsor;
     }
 

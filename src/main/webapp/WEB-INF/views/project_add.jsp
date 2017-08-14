@@ -33,9 +33,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="sponsor">Sponsor</label>
-                    <input type="text" id="sponsor" class="form-control" name="sponsor"/>
+                    <label for="sponsor-name">Sponsor Name</label>
+                    <form:input id="sponsor-name" cssClass="form-control" path="sponsor.name"/>
                 </div>
+
+                <div class="form-group">
+                    <label for="sponsor-phone">Sponsor Phone</label>
+                    <form:input id="sponsor-phone" cssClass="form-control" path="sponsor.phone"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="sponsor-email">Sponsor Email</label>
+                    <form:input id="sponsor-email" cssClass="form-control" path="sponsor.email"/>
+                </div>
+
 
                 <div class="form-group">
                     <label for="year">Year</label>

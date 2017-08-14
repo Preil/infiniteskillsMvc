@@ -63,8 +63,6 @@
             <form:textarea id="notes" path="notes" rows="3" cssClass="form-control"/>
         </div>
 
-
-
         <button type="submit" class="btn btn-default">Submit</button>
 
     </div>
