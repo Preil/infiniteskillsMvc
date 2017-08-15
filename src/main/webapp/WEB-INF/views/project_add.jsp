@@ -64,6 +64,21 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="poc">POC</label>
+                    <form:input id="poc" cssClass="form-control" path="pointsOfContact[0]"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="poc2">POC2</label>
+                    <form:input id="poc2" cssClass="form-control" path="pointsOfContact[1]"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="poc3">POC3</label>
+                    <form:input id="poc3" cssClass="form-control" path="pointsOfContact[2]"/>
+                </div>
+
+                <div class="form-group">
                     <label for="description">Description</label>
                     <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                 </div>

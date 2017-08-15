@@ -1,6 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +54,13 @@
                 <label>Special</label>
                 <span>${project.special == true ? 'Yes':'No'}</span>
             </div>
+
+            <c:forEach items="${project.pointsOfContact}" var="point" varStatus="loop">
+                <div class="form-group">
+                    <label>POC ${loop.index+1}</label>
+                    <span>${point}</span>
+                </div>
+            </c:forEach>
 
         </div>
     </div>
