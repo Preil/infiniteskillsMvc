@@ -24,11 +24,16 @@ public class ResourceController {
         model.addAttribute("typeOptions", options);
         List<String> radios = new LinkedList<>(Arrays.asList("Hours", "Pieces", "Tons"));
         model.addAttribute("radioOptions", radios);
-        List<String> checks = new LinkedList<>(Arrays.asList("Lead Time", "Special rate", "Requires approval"));
-        model.addAttribute("checkOptions", checks);
+//        List<String> checks = new LinkedList<>(Arrays.asList("Lead Time", "Special rate", "Requires approval"));
+//        model.addAttribute("checkOptions", checks);
         model.addAttribute("resource", new Resource());
         System.out.println("Add resource invoked");
         return "resource_add";
+    }
+
+    @ModelAttribute("checkOptions")
+    public List<String> getChecks(){
+        return new LinkedList<>(Arrays.asList("Lead Time", "Special rate", "Requires approval"));
     }
 
     @RequestMapping(value = "/save")
