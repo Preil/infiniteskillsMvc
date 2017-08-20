@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -31,8 +32,9 @@ public class ResourceController {
     }
 
     @RequestMapping(value = "/save")
-    private String save(@ModelAttribute Resource resource){
+    private String save(@ModelAttribute Resource resource, SessionStatus status){
         System.out.println(resource);
+        status.setComplete();
         return "home";
     }
 
