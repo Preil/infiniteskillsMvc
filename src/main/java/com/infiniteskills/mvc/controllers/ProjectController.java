@@ -2,13 +2,12 @@ package com.infiniteskills.mvc.controllers;
 
 import com.infiniteskills.mvc.data.entities.Project;
 import com.infiniteskills.mvc.data.services.ProjectService;
+import com.infiniteskills.mvc.data.validators.ProjectValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -54,6 +53,11 @@ public class ProjectController {
         System.out.println(project);
         model.addAttribute("currentProject", project);
         return "project";
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.addValidators(new ProjectValidator());
     }
 
 
