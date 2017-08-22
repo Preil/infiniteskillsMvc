@@ -24,7 +24,7 @@
 
                 <div class="form-group">
                     <label for="project-name">Name</label>
-                    <input type="text" id="project-name" class="form-control" name="name"/>
+                    <form:input path="name" id="project-name" cssClass="form-control"/>
                 </div>
 
                 <div class="form-group">

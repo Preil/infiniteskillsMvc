@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Ilya 02.08.2017.
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/project")
+@SessionAttributes("project")
 public class ProjectController {
 
     @Autowired
@@ -35,29 +38,29 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String addProject(Model model) {
-        model.addAttribute("types", new ArrayList<String>() {
-            {
-                add("");
-                add("Single year");
-                add("Multi year");
-            }
-        });
-        System.out.println("invoking addProject");
-        model.addAttribute("project", new Project());
+    public String addProject(@ModelAttribute Project project) {
         return "project_add";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveProject(Model model, @ModelAttribute Project project) {
+    public String saveProject(@ModelAttribute Project project) {
         System.out.println(project);
-        model.addAttribute("currentProject", project);
-        return "project";
+        return "project_add";
+    }
+
+    @ModelAttribute("types")
+    public List<String> getTypes(){
+        return new LinkedList<>(Arrays.asList("","Single year", "Multi year"));
     }
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.addValidators(new ProjectValidator());
+    }
+
+    @ModelAttribute("project")
+    public Project getProject(){
+        return new Project();
     }
 
 
