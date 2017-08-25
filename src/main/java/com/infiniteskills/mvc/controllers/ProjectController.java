@@ -6,9 +6,11 @@ import com.infiniteskills.mvc.data.validators.ProjectValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,7 +45,13 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveProject(@ModelAttribute Project project) {
+    public String saveProject(@Valid @ModelAttribute Project project, Errors errors) {
+        if(!errors.hasErrors()){
+            System.out.println("The project is validated");
+        } else{
+            System.out.println("The project did not validate");
+        }
+
         System.out.println(project);
         return "project_add";
     }
