@@ -1,5 +1,7 @@
 package com.infiniteskills.mvc.data.entities;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Project {
     private Long projectId;
     private String name;
     private Sponsor sponsor;
+    @NotBlank
     private String description;
     private BigDecimal authorizedHours;
     private BigDecimal authorizedFunds;
