@@ -12,7 +12,7 @@ public class Project {
     private Long projectId;
     private String name;
     private Sponsor sponsor;
-    @NotBlank
+    @NotBlank(message = "You need to add some description")
     private String description;
     private BigDecimal authorizedHours;
     private BigDecimal authorizedFunds;
