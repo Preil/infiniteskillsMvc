@@ -22,6 +22,9 @@ public class ResourceController {
 
     @RequestMapping(value = "/add")
     private String add(){
+        if(1==1){
+            throw new RuntimeException("There is an error");
+        }
         return "resource_add";
     }
 
