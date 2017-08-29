@@ -20,6 +20,6 @@ public class HomeController {
         project.setDescription("Simple project sponsored by NASA");
         model.addAttribute("currentProject", project);
 
-        return "home";
+        return "welcome";
     }
 }
