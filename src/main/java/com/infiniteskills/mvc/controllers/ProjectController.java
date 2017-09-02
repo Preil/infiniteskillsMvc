@@ -34,6 +34,11 @@ public class ProjectController {
         return "project";
     }
 
+    @RequestMapping(value = "/find/{projectId}")
+    public @ResponseBody Project findProjectObject(Model model, @PathVariable("projectId")Long projectId){
+        return this.projectService.find(projectId);
+    }
+
     @RequestMapping(value = "/find")
     public String find(Model model) {
         model.addAttribute("projects", projectService.findAll());
