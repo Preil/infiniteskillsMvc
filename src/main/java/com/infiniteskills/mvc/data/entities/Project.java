@@ -2,12 +2,14 @@ package com.infiniteskills.mvc.data.entities;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * Ilya 06.08.2017.
  */
+@XmlRootElement(name = "project")
 public class Project {
     private Long projectId;
     private String name;
