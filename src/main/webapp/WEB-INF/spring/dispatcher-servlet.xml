@@ -8,6 +8,9 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven/>
+    <mvc:interceptors>
+        <bean class="com.infiniteskills.mvc.interceptors.GlobalInterceptor"/>
+    </mvc:interceptors>
     <context:component-scan base-package="com.infiniteskills.mvc.controllers"/>
     <context:component-scan base-package="com.infiniteskills.mvc.resolvers"/>
 
