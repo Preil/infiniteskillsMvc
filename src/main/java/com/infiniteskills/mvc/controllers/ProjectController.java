@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -51,9 +52,11 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveProject(@Valid @ModelAttribute Project project, Errors errors) {
-
-        return "redirect:/project/find";
+    public String saveProject(@Valid @ModelAttribute Project project, Errors errors, RedirectAttributes attributes) {
+        project.setProjectId(55L);
+        this.projectService.save(project);
+        attributes.addAttribute("projectId", project.getProjectId().toString());
+        return "redirect:/";
     }
 
     @ModelAttribute("types")

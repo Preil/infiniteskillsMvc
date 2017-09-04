@@ -42,4 +42,8 @@ public class ProjectService {
         project.setDescription(description);
         return project;
     }
+
+    public void save(Project project) {
+        this.projects.add(project);
+    }
 }
