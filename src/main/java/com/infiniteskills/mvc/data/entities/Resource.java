@@ -16,6 +16,14 @@ public class Resource {
     private String[] indicators;
     private String notes;
 
+    public Resource(Long resourceId, String name, String type, BigDecimal cost, String unitOfMeasure) {
+        this.resourceId = resourceId;
+        this.name = name;
+        this.type = type;
+        this.cost = cost;
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
     public Long getResourceId() {
         return resourceId;
     }
