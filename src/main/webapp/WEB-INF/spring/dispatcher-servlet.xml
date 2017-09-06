@@ -52,7 +52,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-    <bean class="com.infiniteskills.mvc.HitCounter" scope="request">
+    <bean class="com.infiniteskills.mvc.HitCounter" scope="session">
         <aop:scoped-proxy/>
     </bean>
 
