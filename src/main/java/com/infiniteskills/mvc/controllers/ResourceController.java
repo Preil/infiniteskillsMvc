@@ -1,7 +1,10 @@
 package com.infiniteskills.mvc.controllers;
 
 import com.infiniteskills.mvc.data.entities.Resource;
+import com.infiniteskills.mvc.data.services.ResourceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -20,12 +23,12 @@ import java.util.List;
 @SessionAttributes("resource")
 public class ResourceController {
 
+    @Autowired
+    private ResourceService service;
+
     @RequestMapping(value = "/add")
     private String add(){
-        if(1==1){
-            throw new RuntimeException("There is an error");
-        }
-        return "resource_add";
+       return "resource_add";
     }
 
     @RequestMapping("/review")
@@ -39,6 +42,12 @@ public class ResourceController {
         System.out.println(resource);
         status.setComplete();
         return "home";
+    }
+
+    @RequestMapping("/find")
+    private String find(Model model){
+        model.addAttribute("resources", service.findAll());
+        return "resources";
     }
 
     @ModelAttribute("resource")

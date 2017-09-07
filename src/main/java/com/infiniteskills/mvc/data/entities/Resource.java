@@ -24,6 +24,9 @@ public class Resource {
         this.unitOfMeasure = unitOfMeasure;
     }
 
+    public Resource() {
+    }
+
     public Long getResourceId() {
         return resourceId;
     }
