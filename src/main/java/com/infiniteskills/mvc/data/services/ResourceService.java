@@ -17,9 +17,9 @@ public class ResourceService {
     public ResourceService() {
         this.resources.add(new Resource(1L, "Coder", "Staff", new BigDecimal(
                 "100.00"), "Hours"));
-        this.resources.add(new Resource(1L, "Analyst", "Staff", new BigDecimal(
+        this.resources.add(new Resource(2L, "Analyst", "Staff", new BigDecimal(
                 "50.00"), "Hours"));
-        this.resources.add(new Resource(1L, "Tester", "Staff", new BigDecimal(
+        this.resources.add(new Resource(3L, "Tester", "Staff", new BigDecimal(
                 "70.00"), "Hours"));
 
     }

@@ -5,9 +5,7 @@ import com.infiniteskills.mvc.data.services.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
 import java.util.Arrays;
@@ -48,6 +46,12 @@ public class ResourceController {
     private String find(Model model){
         model.addAttribute("resources", service.findAll());
         return "resources";
+    }
+
+    @RequestMapping("/{resourceId}")
+    @ResponseBody
+    public Resource findResource(@PathVariable("resourceId") Long resourceId){
+        return service.find(resourceId);
     }
 
     @ModelAttribute("resource")
