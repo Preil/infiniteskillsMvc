@@ -2,16 +2,13 @@ package com.infiniteskills.mvc.controllers;
 
 import com.infiniteskills.mvc.data.entities.Project;
 import com.infiniteskills.mvc.data.services.ProjectService;
-import com.infiniteskills.mvc.data.validators.ProjectValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -64,18 +61,10 @@ public class ProjectController {
         return new LinkedList<>(Arrays.asList("","Single year", "Multi year"));
     }
 
-    @InitBinder
-    public void initBinder(WebDataBinder binder) {
-        binder.addValidators(new ProjectValidator());
-    }
 
     @ModelAttribute("project")
     public Project getProject(){
         return new Project();
     }
 
-    @ExceptionHandler(Exception.class)
-    public String handleError(HttpServletRequest request){
-        return "controller_error";
-    }
 }
