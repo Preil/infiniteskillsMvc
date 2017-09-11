@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -16,84 +15,90 @@
     <script src="<spring:url value="/resources/js/bootstrap-select.min.js"/>"></script>
 </head>
 <body>
-    <jsp:include page="../views/fragments/header.jsp"/>
-    <div class="container">
-        <div class="row">
-                <spring:url value="/project/add" var="formUrl"/>
-                <form:form modelAttribute="project" action="${formUrl }" method="post" cssClass="col-md-8 col-md-offset-2">
+<jsp:include page="../views/fragments/header.jsp"/>
+<div class="container">
+    <div class="row">
+        <spring:url value="/project/add" var="formUrl"/>
+        <form:form modelAttribute="project" action="${formUrl }" method="post" cssClass="col-md-8 col-md-offset-2">
 
-                <div class="form-group">
-                    <label for="project-name">Name</label>
-                    <form:input path="name" id="project-name" cssClass="form-control"/>
-                    <form:errors path="name"/>
-                </div>
+            <div class="form-group">
+                <label for="project-name">Name</label>
+                <form:input path="name" id="project-name" cssClass="form-control"/>
+                <form:errors path="name"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="type">Type</label>
-                    <form:select path="type" items="${types}" cssClass="selectpicker" id = "type"/>
-                </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <form:select path="type" items="${types}" cssClass="selectpicker" id="type"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="sponsor-name">Sponsor Name</label>
-                    <form:input id="sponsor-name" cssClass="form-control" path="sponsor.name"/>
-                </div>
+            <div class="form-group">
+                <label for="sponsor-name">Sponsor Name</label>
+                <form:input id="sponsor-name" cssClass="form-control" path="sponsor.name"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="sponsor-phone">Sponsor Phone</label>
-                    <form:input id="sponsor-phone" cssClass="form-control" path="sponsor.phone"/>
-                </div>
+            <div class="form-group">
+                <label for="sponsor-phone">Sponsor Phone</label>
+                <form:input id="sponsor-phone" cssClass="form-control" path="sponsor.phone"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="sponsor-email">Sponsor Email</label>
-                    <form:input id="sponsor-email" cssClass="form-control" path="sponsor.email"/>
-                </div>
+            <div class="form-group">
+                <label for="sponsor-email">Sponsor Email</label>
+                <form:input id="sponsor-email" cssClass="form-control" path="sponsor.email"/>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="year">Year</label>
-                    <input type="text" id="year" class="form-control" name="year"/>
-                </div>
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="text" id="year" class="form-control" name="year"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="authorizedFunds">Authorized Funds</label>
-                    <input type="text" id="authorizedFunds" class="form-control" name="authorizedFunds"/>
-                </div>
+            <div class="form-group">
+                <label for="startDate">Start Date (Julian)</label>
+                <form:input id="startDate"
+                            cssClass="form-control" path="startDate"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="authorizedHours">Authorized Hours</label>
-                    <input type="text" id="authorizedHours" class="form-control" name="authorizedHours"/>
-                </div>
+            <div class="form-group">
+                <label for="authorizedFunds">Authorized Funds</label>
+                <input type="text" id="authorizedFunds" class="form-control" name="authorizedFunds"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="poc">POC</label>
-                    <form:input id="poc" cssClass="form-control" path="pointsOfContact[0]"/>
-                </div>
+            <div class="form-group">
+                <label for="authorizedHours">Authorized Hours</label>
+                <input type="text" id="authorizedHours" class="form-control" name="authorizedHours"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="poc2">POC2</label>
-                    <form:input id="poc2" cssClass="form-control" path="pointsOfContact[1]"/>
-                </div>
+            <div class="form-group">
+                <label for="poc">POC</label>
+                <form:input id="poc" cssClass="form-control" path="pointsOfContact[0]"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="poc3">POC3</label>
-                    <form:input id="poc3" cssClass="form-control" path="pointsOfContact[2]"/>
-                </div>
+            <div class="form-group">
+                <label for="poc2">POC2</label>
+                <form:input id="poc2" cssClass="form-control" path="pointsOfContact[1]"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                    <form:errors path="description" />
-                </div>
+            <div class="form-group">
+                <label for="poc3">POC3</label>
+                <form:input id="poc3" cssClass="form-control" path="pointsOfContact[2]"/>
+            </div>
 
-                <div class="form-group">
-                    <label for="special">Special</label>
-                    <input id="special" name="special" type="checkbox"/>
-                </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                <form:errors path="description"/>
+            </div>
 
-                <button type="submit" class="btn btn-default">Submit</button>
+            <div class="form-group">
+                <label for="special">Special</label>
+                <input id="special" name="special" type="checkbox"/>
+            </div>
 
-            </form:form>
-        </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+
+        </form:form>
     </div>
+</div>
 </body>
 </html>

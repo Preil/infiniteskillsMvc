@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,6 +23,25 @@ public class Project {
     private boolean special;
     private String type;
     private List<String> pointsOfContact;
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projectId=" + projectId +
+                ", name='" + name + '\'' +
+                ", sponsor=" + sponsor +
+                ", description='" + description + '\'' +
+                ", authorizedHours=" + authorizedHours +
+                ", authorizedFunds=" + authorizedFunds +
+                ", year='" + year + '\'' +
+                ", special=" + special +
+                ", type='" + type + '\'' +
+                ", pointsOfContact=" + pointsOfContact +
+                ", startDate=" + startDate +
+                '}';
+    }
+
+    private Date startDate;
 
     public Long getProjectId() {
         return projectId;
@@ -103,19 +123,12 @@ public class Project {
         this.pointsOfContact = pointsOfContact;
     }
 
-    @Override
-    public String toString() {
-        return "Project{" +
-                "projectId=" + projectId +
-                ", name='" + name + '\'' +
-                ", sponsor=" + sponsor +
-                ", description='" + description + '\'' +
-                ", authorizedHours=" + authorizedHours +
-                ", authorizedFunds=" + authorizedFunds +
-                ", year='" + year + '\'' +
-                ", special=" + special +
-                ", type='" + type + '\'' +
-                ", pointsOfContact=" + pointsOfContact +
-                '}';
+    public Date getStartDate() {
+        return startDate;
     }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
 }
