@@ -13,6 +13,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <property name="converters">
             <list>
                 <bean class="com.infiniteskills.mvc.converters.JulianDateConverter"/>
+                <bean class="com.infiniteskills.mvc.converters.ResourceConverter"/>
             </list>
         </property>
     </bean>

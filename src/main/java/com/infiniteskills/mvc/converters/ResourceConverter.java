@@ -8,7 +8,7 @@ import com.infiniteskills.mvc.data.entities.Resource;
 /**
  * Ilya 11.09.2017.
  */
-public class ResourceConverter implements Converter<String,Resource>{
+public class ResourceConverter implements Converter<String, Resource> {
 
     @Autowired
     ResourceService service;

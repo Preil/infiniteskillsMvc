@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Ilya 11.09.2017.
  */
-public class JulianDateConverter implements Converter<String,Date>{
+public class JulianDateConverter implements Converter<String, Date> {
     @Override
     public Date convert(String strDate) {
         Date tmpDate = null;
